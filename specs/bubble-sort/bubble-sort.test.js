@@ -19,6 +19,7 @@ function bubbleSort(nums) {
       // if current number is smaller to next number, swap them
       // and set swapped to true to keep going
       // todo: optimize further
+      // check iterations and loop through less and less items since the last ones are sorted
       if (nums[i] > nums[i + 1] && nums[i + 1] !== undefined) {
         let newVal1 = nums[i];
         let newVal2 = nums[i + 1];
