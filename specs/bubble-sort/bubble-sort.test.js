@@ -13,8 +13,12 @@
 function bubbleSort(nums) {
   let swapped = true;
   while (swapped) {
+    // run only once if nothing is swapped
     swapped = false;
     for (let i = 0; i < nums.length; i++) {
+      // if current number is smaller to next number, swap them
+      // and set swapped to true to keep going
+      // todo: optimize further
       if (nums[i] > nums[i + 1] && nums[i + 1] !== undefined) {
         let newVal1 = nums[i];
         let newVal2 = nums[i + 1];
@@ -26,8 +30,6 @@ function bubbleSort(nums) {
   }
   return nums;
 }
-
-bubbleSort([10, 5, 3, 8, 2, 6, 4, 7, 9, 1]);
 
 // unit tests
 // do not modify the below code
