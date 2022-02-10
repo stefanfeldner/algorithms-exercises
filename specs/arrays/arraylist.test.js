@@ -18,8 +18,49 @@
 */
 
 class ArrayList {
-  // code goes here
+  constructor() {
+    this.data = {};
+    this.length = 0;
+  }
+  setLength() {
+    let length = Object.keys(this.data).length;
+    this.length = length;
+    return length;
+  }
+  push(value) {
+    this.data[this.setLength()] = value;
+  }
+  pop() {
+    delete this.data[this.setLength() - 1];
+  }
+  get(index) {
+    if (index >= this.setLength()) return 'Index ' + index + ' is out of bound';
+    return this.data[index];
+  }
+  delete(index) {
+    let value = this.data[index];
+    delete this.data[index];
+    return value;
+  }
 }
+
+const array = new ArrayList();
+array.data = {
+  0: 1,
+  1: 2,
+  2: 3,
+  3: 4,
+  4: 5,
+  5: 6,
+  6: 7,
+  7: 8,
+  8: 9,
+  9: 10,
+  10: 11,
+};
+
+array.delete(5)
+console.log(array);
 
 // unit tests
 // do not modify the below code
